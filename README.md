@@ -1,4 +1,4 @@
--- cool middleware name here -- Graphical Management Interface
+Graphical Management Interface
 ==============================================================
 
 This package implements a WEB user interface for the management and configuration of the
