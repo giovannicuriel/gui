@@ -10,6 +10,7 @@ install:
 services:
   - docker
 after_success:
+  - 'echo "Building for PR ${TRAVIS_PULL_REQUEST}"
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker build -t $TRAVIS_REPO_SLUG -f docker/Dockerfile . ; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker login -u="$USERNAME" -p="$PASSWD" ; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker push $TRAVIS_REPO_SLUG ; fi'
